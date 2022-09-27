@@ -1,14 +1,26 @@
-name: learn-github-actions
 on: [push]
+name: Test
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        go-version: [1.15.x]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
     steps:
-      - run: echo "hoge"
-      - uses: actions/checkout@v2
-      - run: |
-          ls -al
-          cd .github/workflows/
-          ls -al
-# actions/checkout アクションの v3 を実行
-# 
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Test
+      run: go test -race -coverprofile="coverage.txt" -covermode=atomic ./...
+
+    - name: upload coverage
+      uses: codecov/codecov-action@v1
+      with:
+        # token: ${{ secrets.CODECOV_TOKEN }}
