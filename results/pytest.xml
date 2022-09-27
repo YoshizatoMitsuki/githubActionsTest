@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="NESH202002617" name="pytest" skipped="0" tests="1" time="0.207" timestamp="2022-09-27T16:23:53.748422"><testcase classname="test_plus" name="test_add" time="0.001" /></testsuite></testsuites>
