@@ -55,4 +55,4 @@ jobs:
         - name: Python Cov 
           uses: orgoro/coverage@v2
           with:
-              coverageFile: results/pytest.xml
+              coverageFile: coverage.xml
