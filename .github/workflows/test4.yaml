@@ -26,7 +26,7 @@ jobs:
       # pytest -> JUnit xml形式で結果を出力
       - name: PyTest
         run: |
-          python -m pytest test_plus.py --junit-xml results/pytest.xml -v --cov=plus --cov-report=html
+          python -m pytest test_plus.py --junit-xml results/pytest.xml -v --cov=plus --cov-report=xml
         continue-on-error: true
 
       # テスト結果の表示
