@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Unit Test Results (Python 3.7)
-          path: results/*.xml
+          path: results/*.html
 
       - name: Download Artifacts
         if: success() || failure()
@@ -46,4 +46,4 @@ jobs:
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         with:
-          files: artifacts/**/*.xml
+          files: artifacts/**/*.html
