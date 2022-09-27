@@ -48,11 +48,11 @@ jobs:
         with:
           files: artifacts/**/*.xml
 
-jobs:
-    coverage:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Python Cov 
-            uses: orgoro/coverage@v2
-            with:
-                coverageFile: path/to/coverage.xml
+
+  coverage:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Python Cov 
+          uses: orgoro/coverage@v2
+          with:
+              coverageFile: path/to/coverage.xml
