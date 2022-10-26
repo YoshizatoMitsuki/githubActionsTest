@@ -1,5 +1,4 @@
 import unittest
-import pytest
 from plus import plus
  
 
@@ -14,7 +13,7 @@ from plus import plus
 # class TestPlus():
 def test_add():
     res = plus(1, 2)
-    assert res == 3       
+    assert res == 3    
 
 if __name__ == '__main__':
     test_add()
